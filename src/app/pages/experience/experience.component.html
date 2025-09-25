@@ -1,0 +1,61 @@
+<section class="experience">
+  <h4 class="subtitle">Career Journey</h4>
+  <h2 class="title">Experience</h2>
+  <p class="description">
+    A timeline of my professional experience showcasing my growth across companies.
+  </p>
+
+  <div class="timeline">
+
+    <!-- Timeline Item Left -->
+    <div class="timeline-item" (mouseenter)="hoveredItem = 0" (mouseleave)="hoveredItem = null">
+      <div class="timeline-card left-card">
+        <h3>Full Stack Developer</h3>
+        <h4>Tasva Automotive Pvt Ltd</h4>
+        <span class="period">Aug 2024 - Jul 2025 | Delhi</span>
+      </div>
+      <div class="timeline-content left-content">
+        <ul>
+          <li [ngStyle]="{'font-weight': hoveredItem === 0 ? 'bold' : 'normal'}">
+            Designed and developed a platform to manage the organization's operational matrix.
+          </li>
+          <li [ngStyle]="{'font-weight': hoveredItem === 0 ? 'bold' : 'normal'}">
+            Implemented modules for material input/output tracking to ensure accurate resource movement.
+          </li>
+          <li [ngStyle]="{'font-weight': hoveredItem === 0 ? 'bold' : 'normal'}">
+            Integrated real-time stock monitoring for inventory accuracy and proactive management.
+          </li>
+          <li [ngStyle]="{'font-weight': hoveredItem === 0 ? 'bold' : 'normal'}">
+            Built features for expenditure tracking and reporting based on on-field team submissions.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Timeline Item Right -->
+    <div class="timeline-item" (mouseenter)="hoveredItem = 1" (mouseleave)="hoveredItem = null">
+      <div class="timeline-content right-content">
+        <ul>
+          <li [ngStyle]="{'font-weight': hoveredItem === 1 ? 'bold' : 'normal'}">
+            Currently undergoing a 6-month internship as part of Full Stack Development training.
+          </li>
+          <li [ngStyle]="{'font-weight': hoveredItem === 1 ? 'bold' : 'normal'}">
+            Working with C#, ASP.NET Core, Angular, Node.js, SQL Server, Web API, REST APIs.
+          </li>
+          <li [ngStyle]="{'font-weight': hoveredItem === 1 ? 'bold' : 'normal'}">
+            &nbsp; &nbsp; &nbsp;Building and deploying scalable web applications and APIs.
+          </li>
+          <li [ngStyle]="{'font-weight': hoveredItem === 1 ? 'bold' : 'normal'}">
+            Collaborating on live projects to strengthen practical knowledge and problem-solving skills.
+          </li>
+        </ul>
+      </div>
+      <div class="timeline-card right-card">
+        <h3>Full Stack Developer Intern</h3>
+        <h4>Ducat IT Training Institute</h4>
+        <span class="period">Aug 2025 – Present | Gurgaon, India</span>
+      </div>
+    </div>
+
+  </div>
+</section>

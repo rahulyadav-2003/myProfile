@@ -1,0 +1,58 @@
+<div class="bg-img" [ngClass]="{ 'hidden': isScrolled }">
+    <img src="assets/images/header-bg-color.png" alt="" class="full-width">
+</div>
+<nav class="navbar" [ngClass]="{ 'scrolled': isScrolled,   'dark-mode-scrolled': isScrolled && isDarkMode }">
+    <div class="navbar-container">
+
+        <div class="brand">
+            <span id="dark-mode-brand">Rahul Yadav</span>
+        </div>
+
+        <!-- Hamburger Button -->
+        <div class="hamburger" (click)="toggleMobileNav()">
+            <span  class="dark-mode-hamburger"></span>
+            <span  class="dark-mode-hamburger"></span>
+            <span class="dark-mode-hamburger"></span>
+        </div>
+
+
+        <!-- Navigation Links -->
+        <ul [ngClass]="{'nav-links': true, 'active': mobileNavOpen, 'scrolled': isScrolled,  'dark-mode-scrolled': isScrolled && isDarkMode  }">
+            <!-- <li> <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"(click)="closeMobileNav()">Home</a></li>
+            <li><a routerLink="/skills" routerLinkActive="active" (click)="closeMobileNav()">Services</a></li>
+            <li><a routerLink="/experience" routerLinkActive="active" (click)="closeMobileNav()">Experience</a></li>
+            <li><a routerLink="/projects" routerLinkActive="active" (click)="closeMobileNav()">My Work</a></li>
+            <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMobileNav()">Contact</a></li> -->
+
+            <li><a href="#home" (click)="closeMobileNav()">Home</a></li>
+            <li><a href="#about" (click)="closeMobileNav()">About me</a></li>
+            <li><a href="#experience" (click)="closeMobileNav()">Experience</a></li>
+            <li><a href="#skills" (click)="closeMobileNav()">Services</a></li>
+            <li><a href="#projects" (click)="closeMobileNav()">My Work</a></li> <!-- Fixed -->
+
+            <!-- Moved navbar-right inside nav-links -->
+            <li class="nav-footer">
+                <div class="moon-icon" (click)="toggleTheme()">
+                    <i [ngClass]="isDarkMode ? 'fa-solid fa-moon' : 'fa-solid fa-sun'"></i>
+                </div>
+
+                <button class="connect-btn"  (click)="closeMobileNav()">Connect&nbsp;&nbsp;
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </li>
+        </ul>
+
+
+        <div class="navbar-right" [ngClass]="{ 'active': mobileNavOpen }">
+            <!-- toggle-theme.component.html -->
+            <div class="moon-icon" (click)="toggleTheme()">
+                <i [ngClass]="isDarkMode ? 'fa-solid fa-moon' : 'fa-solid fa-sun'"></i>
+            </div>
+            <button class="connect-btn" (click)="scrollToContact();">Connect&nbsp;&nbsp;
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </button>
+        </div>
+
+    </div>
+</nav>

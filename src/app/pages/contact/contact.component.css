@@ -1,0 +1,145 @@
+.contact-section {
+  width: 100%;
+  text-align: center;
+  padding: 60px 0px;
+  background-image: url('/assets/images/header-bg-color.png'); /* replace with your image */
+  background-size:  750px 490px;
+  background-position: center;
+  background-repeat: no-repeat;
+
+
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.description2{
+    margin-bottom: 0px;
+    margin-top: -30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.form-input {
+  flex: 1;
+  min-width: 250px;
+  padding: 14px 16px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #333;
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 14px 0px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: none;
+  outline: none;
+}
+
+.form-textarea::placeholder{
+    padding-left: 15px;
+}
+
+.submit-btn {
+  align-self: center;
+  padding: 14px 28px;
+  background: #000;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+    border: 1px solid #333;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #fff;
+  color: #000;
+
+
+}
+
+
+@media screen and (max-width: 768px) {
+  
+:host-context(body.dark-mode) .contact-section{
+  width: 90%;
+  padding: 60px 20px;
+}
+
+}
+
+@media screen and (max-width: 360px) {
+  
+:host-context(body.dark-mode) .form-input{
+min-width: 200px;
+}
+
+}
+
+
+/* when dark mode is on then this styling is working  */ 
+
+
+:host-context(body.dark-mode) .contact-section{
+  background-image: none;
+}
+:host-context(body.dark-mode) .contact-form{
+  border: 1px solid white;
+  margin-top: 10px;
+}
+:host-context(body.dark-mode)  .description{
+  color: white;
+}
+:host-context(body.dark-mode)  .subtitle{
+  color: white;
+}
+:host-context(body.dark-mode)  .submit-btn{
+  color: white;
+  background-color: #333;
+}
+
+
+

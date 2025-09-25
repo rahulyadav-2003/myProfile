@@ -1,0 +1,290 @@
+/* General Styling for Navbar */
+.bg-img {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 91.666667%;
+  z-index: -10;
+  transform: translateY(-80%);
+  transition: opacity 0.4s ease-in-out;
+  /* smooth fade */
+}
+
+.bg-img.hidden {
+  opacity: 0;
+  /* hide when scrolled */
+  pointer-events: none;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.navbar {
+  /* background: linear-gradient(to right, #fff, #f3f3f3); */
+  padding: 10px 15px;
+  position: fixed;
+  width: 98%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Navbar after scroll */
+.navbar.scrolled {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand span {
+  font-size: 24px;
+  font-weight: bold;
+  color: #111;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  padding: 10px 22px;
+  border-radius: 40px;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Remove shadow when scrolled */
+.nav-links.scrolled {
+  box-shadow: none;
+}
+
+/* Dark mode + scrolled */
+.navbar.dark-mode-scrolled {
+  background-color: rgba(18, 18, 18, 0.95); /* Dark background */
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.navbar.dark-mode-scrolled .brand,
+.navbar.dark-mode-scrolled .nav-links a,
+.navbar.dark-mode-scrolled .connect-btn,
+.navbar.dark-mode-scrolled .moon-icon i {
+  color: #fff;
+}
+.navbar.dark-mode-scrolled .connect-btn{
+  background-color: black;
+  border: none;
+}
+
+.nav-links.dark-mode-scrolled {
+  background-color: black;
+  box-shadow: none;
+  color: white;
+}
+
+
+
+.nav-links li a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+  /* font-weight: 600; */
+  /* Highlight Color */
+}
+
+.navbar-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.nav-footer {
+  display: none;
+}
+
+.connect-btn {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: black;
+  border: none;
+  border-radius: 25px;
+  border: 1px solid;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.connect-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.moon-icon i {
+  font-size: 22px;
+  color: #333;
+  cursor: pointer;
+}
+
+
+
+
+/* Hamburger Styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #111;
+  border-radius: 2px;
+}
+
+@media screen and (max-width: 900px) {
+  .hamburger {
+    display: flex;
+    color: white;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    flex-direction: column;
+    gap: 20px;
+    width: 250px;
+    background-color: #fff;
+    padding: 30px 25px;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.9s ease;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+  }
+
+  .navbar-right {
+    display: none !important;
+    /* hide on mobile & tablets */
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    flex-direction: column;
+    gap: 20px;
+    width: 250px;
+    background-color: #fff;
+    padding: 30px 25px;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  /* New: styling for the nav-footer section inside nav-links */
+  .nav-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+  }
+
+  .moon-icon i {
+    font-size: 22px;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .connect-btn {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: black;
+    border: 1px solid;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .connect-btn:hover {
+    background-color: black;
+    color: white;
+  }
+
+  /* Remove original hidden style for .navbar-right */
+  .navbar-right {
+    display: none !important;
+  }
+}
+
+
+
+/* when dark mode is on then this styling is working  */
+
+:host-context(body.dark-mode) .bg-img{
+  display: none;
+}
+:host-context(body.dark-mode) #dark-mode-brand{
+  color: white;
+}
+:host-context(body.dark-mode) .navbar{
+  width: 95%;
+  padding: 15px 30px;
+}
+:host-context(body.dark-mode) .moon-icon>i{
+  color: white;
+}
+:host-context(body.dark-mode) .dark-mode-hamburger{
+  background-color: white;
+}
+:host-context(body.dark-mode) .nav-links.active{
+  background-color: black;
+}
+:host-context(body.dark-mode) .nav-links.active>li>a{
+  color: white;
+  /* background-color: black; */
+}
+:host-context(body.dark-mode) .navbar.dark-mode-scrolled .connect-btn:hover{
+  color: black;
+  background-color: white;
+}

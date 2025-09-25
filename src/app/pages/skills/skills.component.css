@@ -1,0 +1,166 @@
+.skills {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.description {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #444;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Scroll container */
+.services-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px;
+}
+
+.services-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Service card */
+.service-card {
+  flex: 0 0 280px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+}
+
+/* Hover effect same as your image */
+.service-card:hover {
+  background: #fff;
+  /* color: #fff; */
+  box-shadow: 6px 6px 0px rgba(0,0,0,0.15);
+  transform: translateY(-4px);
+}
+
+.service-card.expanded {
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Icon */
+.service-card .icon {
+  font-size: 28px;
+  background: #ff4bb6;
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.service-card h3 {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.service-card ul {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  font-size: 14px;
+  color: #333;
+}
+
+.read-more {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+}
+
+/* Scroll buttons */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.scroll-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.scroll-btn.left {
+  left: -20px;
+  display: none; /* initially hidden */
+}
+
+.scroll-btn.right {
+  right: -20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 28px;
+  }
+  .service-card {
+    flex: 0 0 185px;
+  }
+}
+
+
+
+
+
+/* when dark mode is on this styling is work  */
+
+:host-context(body.dark-mode) .subtitle{
+ color: white;
+}
+
+:host-context(body.dark-mode) .description{
+ color: white;
+}
+
+:host-context(body.dark-mode) .service-card >h3{
+ color: black;
+}

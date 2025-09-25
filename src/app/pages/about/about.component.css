@@ -1,0 +1,304 @@
+.about-me-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 100px 80px 100px;
+}
+
+.about-me-left {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.profile-image {
+  width: 270px;
+  /* Smaller profile image */
+  height: 270px;
+  object-fit: cover;
+  /* border-radius: 50%; */
+  border: 3px solid #ddd;
+}
+
+#about-me-video {
+  width: 400px;
+  height: 300px;
+  border: none;
+}
+
+.about-me-right {
+  flex: 2;
+}
+
+h2 {
+  font-size: 1.9rem;
+  /* Smaller heading */
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: .9rem;
+  /* Smaller paragraph text */
+  line-height: 1.5;
+  margin-bottom: 5px;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  width: 20%;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card i {
+  font-size: 1rem;
+  /* Smaller icons */
+  margin-bottom: 5px;
+}
+
+.card h3 {
+  font-size: 1rem;
+  /* Smaller card headings */
+  margin: 15px 0;
+}
+
+.card p {
+  font-size: .8rem;
+  /* Smaller card paragraph text */
+}
+
+.tools {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.tools-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.tool-icon {
+  width: 25px;
+  /* Smaller tool icons */
+  height: 25px;
+  border: 1px solid #333;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+
+/* --- Hover Effects --- */
+
+/* Profile Image Hover */
+.profile-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Hover */
+.card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Icon Hover */
+.card i:hover {
+  color: #ff4c61;
+  /* Highlight color */
+  transition: color 0.3s ease;
+}
+
+/* Tool Icon Hover */
+.tool-icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-color: #ff4c61;
+}
+
+
+
+/* Default: Desktop (already applied above) */
+
+/* Tablet screens (<= 1024px) */
+@media screen and (max-width: 1024px) {
+  .about-me-container {
+    padding: 60px 50px;
+    flex-direction: column;
+    /* Stack image and content */
+    text-align: center;
+  }
+
+  .about-me-left {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .profile-image {
+    width: 250px;
+    height: 250px;
+  }
+
+
+  #about-me-video {
+    width: 465px;
+    height: 260px;
+  }
+
+
+
+  .card-container {
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Wrap cards */
+  }
+
+  .card {
+    width: 40%;
+    /* Two cards per row */
+  }
+}
+
+/* Mobile screens (<= 768px) */
+@media screen and (max-width: 768px) {
+  .about-me-container {
+    padding: 40px 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+    .profile-image:hover {
+    transform: scale(1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card {
+    width: 80%;
+    /* Full width cards */
+  }
+
+  .tools-icons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tool-icon {
+    width: 22px;
+    height: 22px;
+    padding: 8px;
+  }
+}
+
+/* Small mobile (<= 480px) */
+@media screen and (max-width: 480px) {
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  #about-me-video {
+    width: 350px;
+    height: 200px;
+  }
+
+  :host-context(body.dark-mode) #about-me-video{
+   width: 330px;
+    height: 180px; 
+  }
+
+  .profile-image:hover {
+    transform: scale(1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .tools {
+    font-size: 0.9rem;
+  }
+
+  .tool-icon {
+    width: 20px;
+    height: 20px;
+    padding: 6px;
+  }
+}
+
+
+@media screen and (max-width: 380px) {
+  #about-me-video {
+    width: 280px;
+    height: 200px;
+  }
+    :host-context(body.dark-mode) #about-me-video{
+   width: 260px;
+    height: 180px; 
+  }
+}
+
+
+@media screen and (max-width: 280px) {
+  #about-me-video {
+    width: 240px;
+    height: 200px;
+  }
+
+    :host-context(body.dark-mode) #about-me-video{
+   width: 220px;
+    height: 170px; 
+  }
+
+}
+
+
+
+/* when dark mode is the this style is working  */
+
+
+:host-context(body.dark-mode) .card{
+  color: black;
+}
+:host-context(body.dark-mode) .tool-icon{
+  border: 1px solid white;
+}
+
+:host-context(body.dark-mode) #about-me-video{
+  border: 1px solid;
+    padding: 10px;
+    border-radius: 10px;
+}
+

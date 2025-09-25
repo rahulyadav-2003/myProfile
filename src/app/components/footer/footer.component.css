@@ -1,0 +1,189 @@
+.footer {
+  width: 100%;
+  background: #fff;
+  color: #333;
+  padding: 30px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.footer-top h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.footer-top .email {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer-top .email a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-top .email i {
+  /* vertical-align: middle; */
+  font-size: 1rem;
+  margin-right: 0px;
+}
+
+
+.footer-top .email a:hover {
+  color: rgb(112, 193, 225);
+}
+
+.footer hr {
+  margin: 20px auto;
+  border: none;
+  border-top: 1px solid #ccc;
+  width: 90%;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-size: 1rem;
+  flex-wrap: wrap; 
+}
+
+.footer-bottom ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  flex-wrap: wrap; 
+}
+
+.footer-bottom ul li a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-bottom ul li a i {
+  margin-right: 5px;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.footer-bottom ul li a:hover i {
+  text-decoration: underline;
+}
+
+/* Optional: Add hover effect on links */
+.footer-bottom ul li a:hover {
+   text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .footer-top h2 {
+    font-size: 1.6rem;
+  }
+
+  .footer-top .email {
+    font-size: 0.9rem;
+    gap: 6px;
+  }
+
+  .footer-bottom {
+    font-size: 0.85rem;
+  }
+
+  .footer-bottom ul {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 25px 15px;
+  }
+
+  .footer-top h2 {
+    font-size: 1.4rem;
+  }
+
+  .footer-top .email {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .footer-bottom ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 10px;
+  }
+
+  .footer-top h2 {
+    font-size: 1.2rem;
+  }
+
+  .footer-top .email {
+    font-size: 0.85rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom ul {
+    gap: 8px;
+  }
+}
+
+
+
+/* when dark mode is on then this styling is working  */
+
+:host-context(body.dark-mode) .footer{
+  background-color: black;
+}
+
+:host-context(body.dark-mode) .footer-top > h2{
+  color: white;
+}
+:host-context(body.dark-mode) .material-icons{
+  color: white;
+}
+:host-context(body.dark-mode) #dark-mode-linkedin{
+  color: white;
+}
+:host-context(body.dark-mode) .material-icons{
+  color: white;
+}
+:host-context(body.dark-mode)  #dark-mode-github{
+  color: white;
+}
+:host-context(body.dark-mode)  #dark-mode-rights{
+  color: white;
+}
+:host-context(body.dark-mode)   #dark-mode-contact{
+  color: white;
+}
+:host-context(body.dark-mode) #dark-mode-email{
+  color: white;
+}

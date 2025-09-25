@@ -1,0 +1,33 @@
+<section class="skills">
+  <h4 class="subtitle">What I offer</h4>
+  <h2 class="title">My services</h2>
+  <p class="description">
+    I am a Full stack developer from Gurgaon, India with 1+ years of experience in multiple
+    companies.
+  </p>
+
+  <!-- Scroll buttons -->
+  <!-- <button class="scroll-btn left" (click)="scrollContainer('left')">←</button>
+  <button class="scroll-btn right" (click)="scrollContainer('right')">→</button> -->
+
+  <div class="services-container">
+    <div
+      class="service-card"
+      *ngFor="let service of services; let i = index"
+      [class.expanded]="expandedIndex === i"
+      (click)="toggleExpand(i)"
+    >
+      <div class="icon">{{ service.icon }}</div>
+      <h3>{{ service.title }}</h3>
+      <p>{{ service.desc }}</p>
+
+      <ul *ngIf="expandedIndex === i">
+        <li *ngFor="let item of service.details">• {{ item }}</li>
+      </ul>
+
+      <span class="read-more">
+        {{ expandedIndex === i ? 'Read less' : 'Read more' }} →
+      </span>
+    </div>
+  </div>
+</section>

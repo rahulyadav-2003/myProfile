@@ -1,0 +1,173 @@
+/* Container */
+.home-container {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Profile Image */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 110px;
+  margin-bottom: 50px;
+}
+
+/* Greeting */
+.greeting {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.greeting .name {
+  font-weight: bold;
+  color: #111;
+}
+
+/* Title */
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #222;
+  line-height: 1.4;
+}
+
+/* Description */
+.description {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 15px;
+  max-width: 700px;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn i {
+  font-size: 1rem;
+}
+
+/* Primary Button */
+.btn.primary {
+  background: #000;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: #333;
+}
+
+/* Secondary Button */
+.btn.secondary {
+  border: 2px solid #000;
+  color: #000;
+}
+
+.btn.secondary:hover {
+  background: #f5f5f5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home-container {
+    min-height: 45vh;
+  }
+
+  .profile-img {
+    margin-top: 0px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+    padding: 10px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    min-height: 45vh;
+  }
+
+  .profile-img {
+    margin-top: 40px;
+  }
+
+
+}
+
+/* when dark mode is on this styling is work  */
+
+:host-context(body.dark-mode) .title {
+  color: white;
+}
+
+:host-context(body.dark-mode) .greeting {
+  color: white;
+}
+
+:host-context(body.dark-mode) .name {
+  color: white;
+}
+
+:host-context(body.dark-mode) .description {
+  color: white;
+}
+
+
+:host-context(body.dark-mode) .btn.primary {
+  color: white;
+  background-color: #333;
+}
+
+:host-context(body.dark-mode) .btn.secondary {
+  color: white;
+  background-color: #333;
+}
+
+:host-context(body.dark-mode) .btn.primary:hover {
+  color: black;
+  background-color: white;
+}
+
+:host-context(body.dark-mode) .btn.secondary:hover {
+  color: black;
+  background-color: white;
+}
+
+:host-context(body.dark-mode) .profile-img {
+  margin-top: 100px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 
+              0 6px 20px rgba(255, 255, 255, 0.08);
+}

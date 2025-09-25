@@ -1,0 +1,170 @@
+.portfolio {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.description {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #444;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 75px;
+  max-height: 240px; /* show only one row initially */
+  overflow: hidden;
+  padding: 13px 10px;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.projects.expanded {
+  max-height: 1100px; /* expand to fit two rows */
+  padding: 10px;
+}
+
+.project-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.08);
+}
+
+.project-info {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.project-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.project-info span {
+  font-size: 13px;
+  color: #666;
+}
+
+.icon-btn {
+  background: #f7f7f7;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.icon-btn:hover {
+  background: #333;
+  color: #fff;
+  transform: rotate(45deg);
+}
+
+.show-more {
+  margin-top: 40px;
+}
+
+.show-more button {
+  padding: 12px 28px;
+  border-radius: 25px;
+  border: 1px solid #333;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.show-more button:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 28px;
+  }
+  .project-card img {
+    height: 180px;
+  }
+
+  .show-more{
+    margin-top: 0px;
+  }
+}
+
+
+
+/* when dark mode is on then this style is working  */
+
+:host-context(body.dark-mode) .portfolio{
+  color: white;
+}
+
+:host-context(body.dark-mode) .description{
+  color: white;
+}
+
+:host-context(body.dark-mode) .subtitle{
+  color: white;
+}
+
+:host-context(body.dark-mode) .show-more > button{
+  color: white;
+  background-color: #333;
+}
+
+:host-context(body.dark-mode) .show-more > button:hover{
+  color: black;
+  background-color: white;
+}
+:host-context(body.dark-mode) #dark-mode-project-id{
+  color: black;
+}

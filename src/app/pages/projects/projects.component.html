@@ -1,0 +1,27 @@
+<section class="portfolio">
+  <h4 class="subtitle">My portfolio</h4>
+  <h2 class="title">My latest work</h2>
+  <p class="description">
+    Welcome to my web development portfolio! Explore a collection of projects showcasing
+    my expertise in full stack development.
+  </p>
+
+  <div class="projects" [class.expanded]="showMore">
+    <div class="project-card" *ngFor="let project of projects">
+      <img [src]="project.image" [alt]="project.title" />
+      <div class="project-info">
+        <div>
+          <h3 id="dark-mode-project-id">{{ project.title }}</h3>
+          <span>{{ project.category }}</span>
+        </div>
+        <button class="icon-btn">➔</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="show-more">
+    <button (click)="toggleShowMore()">
+      {{ showMore ? 'Show less' : 'Show more' }} →
+    </button>
+  </div>
+</section>
