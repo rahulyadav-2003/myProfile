@@ -49,6 +49,41 @@
   color: #111;
 }
 
+/* typing effect  on brand  */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.typing-effect {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  border-right: 2px solid black;  /* The cursor effect */
+  animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end 1s forwards, hideCursor 4s forwards;
+}
+
+@keyframes hideCursor {
+  100% {
+    border-color: transparent;  /* Hide the cursor once typing is done */
+  }
+}
+
+
+
+
+
 .nav-links {
   list-style: none;
   display: flex;

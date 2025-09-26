@@ -38,6 +38,12 @@
 
 .footer-top .email a:hover {
   color: rgb(112, 193, 225);
+    font-weight: bold;
+
+}
+/* Apply the same styling to the phone section */
+.footer-top .phone {
+  margin-top: 8px; /* To ensure space between email and phone */
 }
 
 .footer hr {
@@ -80,11 +86,14 @@
 
 .footer-bottom ul li a:hover i {
   text-decoration: underline;
+  font-weight: bold;
 }
 
 /* Optional: Add hover effect on links */
 .footer-bottom ul li a:hover {
    text-decoration: underline;
+     font-weight: bold;
+
 }
 
 /* Responsive */
@@ -117,8 +126,8 @@
   }
 
   .footer-top .email {
-    flex-direction: column;
-    gap: 4px;
+    /* flex-direction: column; */
+    gap: 5px;
   }
 
   .footer-bottom {
@@ -128,8 +137,8 @@
   }
 
   .footer-bottom ul {
-    flex-direction: column;
-    gap: 10px;
+    /* flex-direction: column; */
+    gap: 30px;
   }
 }
 
@@ -151,7 +160,9 @@
   }
 
   .footer-bottom ul {
-    gap: 8px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
   }
 }
 
@@ -185,5 +196,8 @@
   color: white;
 }
 :host-context(body.dark-mode) #dark-mode-email{
+  color: white;
+}
+:host-context(body.dark-mode) #dark-mode-phone{
   color: white;
 }

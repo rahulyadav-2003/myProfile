@@ -40,6 +40,40 @@
   line-height: 1.4;
 }
 
+
+/* animation text on title  */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.typing-effect {
+  /* display: inline-block; */
+  white-space: nowrap;
+  font-weight: bold;
+  overflow: hidden;
+  width: 0;
+  border-right: 2px solid black;  /* Cursor effect */
+  animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
+}
+
+.title .typing-effect {
+  font-size: inherit;  /* Ensure the typing text inherits the title's font size */
+  color: inherit;  /* Inherit the color from .title */
+  line-height: inherit;  /* Inherit line-height for consistency */
+}
+
+
 /* Description */
 .description {
   font-size: 1rem;
