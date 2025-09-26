@@ -29,14 +29,16 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 75px;
-  max-height: 240px; /* show only one row initially */
+  max-height: 240px;
+  /* show only one row initially */
   overflow: hidden;
   padding: 13px 10px;
   transition: max-height 0.5s ease-in-out;
 }
 
 .projects.expanded {
-  max-height: 1100px; /* expand to fit two rows */
+  max-height: 1100px;
+  /* expand to fit two rows */
   padding: 10px;
 }
 
@@ -44,14 +46,14 @@
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .project-card:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .project-card img {
@@ -127,44 +129,119 @@
 }
 
 /* Responsive */
+
+
+@media (max-width: 1024px) {
+  .projects {
+    gap: 50px;
+    padding: 10px;
+  }
+
+  .project-card img {
+    height: 200px;
+  }
+}
+
+
 @media (max-width: 768px) {
   .title {
     font-size: 28px;
   }
+
   .project-card img {
     height: 180px;
   }
 
-  .show-more{
-    margin-top: 0px;
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+  }
+
+
+  .show-more {
+    margin-top: 15px;
+  }
+
+}
+
+
+
+/* Small Mobile (<=480px) */
+@media screen and (max-width: 480px) {
+
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 8px;
+    overflow-y: auto;
+    /* enable vertical scroll */
+    overflow-x: hidden;
+  }
+
+  .project-card img {
+    height: 160px;
+  }
+
+  .project-card:hover img {
+    transform: scale(.8);
+  }
+
+  /* Scrollbar styles (for WebKit-based browsers) */
+  .projects::-webkit-scrollbar {
+    width: 8px;
+    /* vertical scrollbar width */
+  }
+
+
+
+  .projects::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .projects::-webkit-scrollbar-thumb {
+    background-color: rgba(136, 136, 136, 0.5);
+    /* semi-transparent */
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .projects:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(136, 136, 136, 0.9);
   }
 }
+
+
+
+
+/* Small Mobile (<=325px) */
+
 
 
 
 /* when dark mode is on then this style is working  */
 
-:host-context(body.dark-mode) .portfolio{
+:host-context(body.dark-mode) .portfolio {
   color: white;
 }
 
-:host-context(body.dark-mode) .description{
+:host-context(body.dark-mode) .description {
   color: white;
 }
 
-:host-context(body.dark-mode) .subtitle{
+:host-context(body.dark-mode) .subtitle {
   color: white;
 }
 
-:host-context(body.dark-mode) .show-more > button{
+:host-context(body.dark-mode) .show-more>button {
   color: white;
   background-color: #333;
 }
 
-:host-context(body.dark-mode) .show-more > button:hover{
+:host-context(body.dark-mode) .show-more>button:hover {
   color: black;
   background-color: white;
 }
-:host-context(body.dark-mode) #dark-mode-project-id{
+
+:host-context(body.dark-mode) #dark-mode-project-id {
   color: black;
 }
