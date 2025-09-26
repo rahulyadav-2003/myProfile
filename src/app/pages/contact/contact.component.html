@@ -4,18 +4,24 @@
     <p class="description">
         I'd love to hear from you! If you have any questions, comments or
     </p>
-    <p class="description description2" >feedback,please use the form below.</p>
+    <p class="description description2">feedback,please use the form below.</p>
 
-    <form class="contact-form">
+    <!-- Popup Box -->
+    <div *ngIf="popupMessage" [ngClass]="popupType" class="popup">
+        {{ popupMessage }}
+    </div>
+
+    <form class="contact-form" (submit)="sendEmail($event)">
         <div class="form-row">
-            <input type="text" placeholder="Enter your name" class="form-input" />
-            <input type="email" placeholder="Enter your email" class="form-input" />
+            <input type="text" name="user_name" placeholder="Enter your name" class="form-input" required />
+            <input type="email" name="user_email" placeholder="Enter your email" class="form-input" required />
         </div>
 
-        <textarea placeholder="Enter your message" class="form-textarea" rows="5"></textarea>
+        <textarea name="message" placeholder="Enter your message" class="form-textarea" rows="5" required></textarea>
 
         <button type="submit" class="submit-btn">
             Submit now →
         </button>
     </form>
+
 </div>

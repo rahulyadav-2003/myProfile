@@ -102,6 +102,38 @@
 }
 
 
+/* Popup Box */
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  animation: fadeInOut 3s forwards;
+  z-index: 9999;
+}
+
+.popup.success {
+  background-color: #4caf50; /* green */
+}
+
+
+
+.popup.error {
+  background-color: #f44336; /* red */
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+
 @media screen and (max-width: 768px) {
   
 :host-context(body.dark-mode) .contact-section{
